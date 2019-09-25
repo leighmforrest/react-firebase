@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 
+import { SignUpLink } from "../SignUp";
+import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
-const SignUpPage = () => (
+const SignInPage = () => (
   <div>
     <h1>SignIn</h1>
     <SignInForm />
+    <PasswordForgetLink />
+    <SignUpLink />
   </div>
 );
 
@@ -74,5 +78,5 @@ const SignInForm = compose(
   withFirebase
 )(SignInFormBase);
 
-export default SignUpPage;
+export default SignInPage;
 export { SignInForm };
